@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Muh. Syahdan</title>
+   
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
@@ -132,8 +135,8 @@
               <input type="text" placeholder="nama" required="" name="nama">
                 <input type="email" placeholder="email" required="" name="email">
             </div>
-            <input type="text" placeholder="subject" name="subject">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Pesan" required="" name="pesan"></textarea>
+            <input type="text" placeholder="subject" required="" name="subject">
+            <textarea id="" cols="30" rows="10" placeholder="Pesan" required="" name="pesan"></textarea>
             <button class="btn" value="submit" type="submit" name="submit" required=""> send message </button>
             <div class="clear"></div>
         </form>
@@ -170,21 +173,26 @@
 
 
 
-
-
 <!-- jquery cdn link  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbx_DLxmJGpDKNj_TXUyuXnOehnVJnaRoiCPse11hifuINbbMul7wkv4aHdFEkOpcNyo/exec'
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzIsE7OlSKM2O2FVRnBK3n2HL3yzZFQgKo587W7u7_dtQOnvBZnqQ8qEut0XMvLsFxFkQ/exec"
+
   const form = document.forms['cv-contact-form']
 
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
+      .then(response => 
+      {
+        alert("Pesan anda sudah terkirim")
+        form.reset();
+      
+        console.log('Success!', response);
+    })
       .catch(error => console.error('Error!', error.message))
   })
 </script>
