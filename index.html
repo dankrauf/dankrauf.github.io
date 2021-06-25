@@ -127,14 +127,14 @@
 
     <div class="row">
 
-        <form action="">
+        <form name="cv-contact-form">
             <div class="inputBox">
-              <input type="text" placeholder="nama" required="">
-                <input type="email" placeholder="email" required="">
+              <input type="text" placeholder="nama" required="" name="nama">
+                <input type="email" placeholder="email" required="" name="email">
             </div>
-            <input type="text" placeholder="subject">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Pesan" reuired=""></textarea>
-            <button class="btn" value="Submit" type="Submit" name="submit" required=""> send message </button>
+            <input type="text" placeholder="subject" name="subject">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Pesan" required="" name="pesan"></textarea>
+            <button class="btn" value="submit" type="submit" name="submit" required=""> send message </button>
             <div class="clear"></div>
         </form>
 
@@ -177,6 +177,16 @@
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx_DLxmJGpDKNj_TXUyuXnOehnVJnaRoiCPse11hifuINbbMul7wkv4aHdFEkOpcNyo/exec'
+  const form = document.forms['cv-contact-form']
 
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 </html>
