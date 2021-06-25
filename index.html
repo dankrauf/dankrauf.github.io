@@ -160,8 +160,16 @@
 <script src="js/script.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    function  showAlert(){
-    swal({
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzIsE7OlSKM2O2FVRnBK3n2HL3yzZFQgKo587W7u7_dtQOnvBZnqQ8qEut0XMvLsFxFkQ/exec"
+
+  const form = document.forms['cv-contact-form']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => 
+      {
+         swal({
   title: "Apakah anda yakin ?",
   text: "tekan ok !, jika tidak tekan cancel !",
   icon: "warning",
@@ -178,19 +186,6 @@
     swal("Pesan anda telah dibatalkan !");
   }
 });
-    }
-</script>
-<script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzIsE7OlSKM2O2FVRnBK3n2HL3yzZFQgKo587W7u7_dtQOnvBZnqQ8qEut0XMvLsFxFkQ/exec"
-
-  const form = document.forms['cv-contact-form']
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => 
-      {
-        
         form.reset();
       
         console.log('Success!', response);
