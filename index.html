@@ -163,14 +163,15 @@
     function  showAlert(){
     swal({
   title: "Apakah anda yakin ?",
-  text: "Pesan anda akan terkirim kekami, Terima kasih !",
+  text: "tekan ok !",
   icon: "warning",
   buttons: true,
   dangerMode: true,
 })
 .then((willDelete) => {
   if (willDelete) {
-    swal("Pesan anda telah terkirim !", {
+    swal(
+        "Pesan anda telah terkirim !, terima kasih", {
       icon: "success",
     });
   } else {
