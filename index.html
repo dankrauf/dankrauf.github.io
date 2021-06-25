@@ -178,6 +178,27 @@
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
+<script src="js/swal.js"></script>
+<script>
+    function  showAlert(){
+    swal({
+  title: "Apakah anda yakin ?",
+  text: "Pesan anda akan terkirim kekami, Terima kasih !",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Pesan anda telah terkirim !", {
+      icon: "success",
+    });
+  } else {
+    swal("Pesan anda telah dibatalkan !");
+  }
+});
+    }
+</script>
 <script>
   const scriptURL = "https://script.google.com/macros/s/AKfycbzIsE7OlSKM2O2FVRnBK3n2HL3yzZFQgKo587W7u7_dtQOnvBZnqQ8qEut0XMvLsFxFkQ/exec"
 
@@ -188,7 +209,7 @@
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => 
       {
-        alert("Pesan anda sudah terkirim !")
+        
         form.reset();
       
         console.log('Success!', response);
