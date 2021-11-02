@@ -135,7 +135,11 @@
             </div>
             <input type="text" placeholder="subject" required="" name="subject">
             <textarea id="" cols="30" rows="10" placeholder="Pesan" required="" name="pesan"></textarea>
-            <button onclick="showAlert()" class="btn" value="submit" type="submit" name="submit" required=""> KIRIM </button>
+            <button class="btn btn-primary btn-kirim" value="submit" type="submit" name="submit" required=""> KIRIM </button>
+            <button class="btn btn-primary btn-load d-none" type="button" disabled>
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Loading...
+            </button>
             <div class="clear"></div>
         </form>
 
@@ -161,11 +165,15 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
   const scriptURL = "https://script.google.com/macros/s/AKfycbzIsE7OlSKM2O2FVRnBK3n2HL3yzZFQgKo587W7u7_dtQOnvBZnqQ8qEut0XMvLsFxFkQ/exec"
-
+  
   const form = document.forms['cv-contact-form']
+  const btnKirim = document.querySelector('.btn-kirim');
+  const btnLoad = document.querySelector('.btn-load');
 
   form.addEventListener('submit', e => {
     e.preventDefault()
+      btnLoad.classList.toggle('d-none');
+      btnKirim.classList.toggle('d-none');
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => 
       {
@@ -187,7 +195,8 @@
   }
 });
         form.reset();
-      
+       btnLoad.classList.toggle('d-none');
+       btnKirim.classList.toggle('d-none');
         console.log('Success!', response);
     })
       .catch(error => console.error('Error!', error.message))
