@@ -1,22 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Muh. Syahdan</title>
 
-      <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-        +0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
-    
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
+    <script>
+    document.onreadystatechange = function () {
+    if (document.readyState === "complete") {
+    console.log(document.readyState);
+    document.getElementById("PreLoaderBar").style.display = "none";
+    }
+    }
+    </script>
+    <style type="text/css">
+  .progress {
+  position: relative;
+  height: 2px;
+  display: block;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  background-clip: padding-box;
+  /*margin: 0.5rem 0 1rem 0;*/
+overflow: hidden;
 
+ }
+  .progress .indeterminate {
+  background-color:black; }
+  .progress .indeterminate:before {
+  content: '';
+  position: absolute;
+  background-color: #2C67B1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; }
+  .progress .indeterminate:after {
+  content: '';
+  position: absolute;
+  background-color: #2C67B1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  -webkit-animation-delay: 1.15s;
+animation-delay: 1.15s; }
+
+
+ @-webkit-keyframes indeterminate {
+  0% {
+  left: -35%;
+  right: 100%; }
+  60% {
+  left: 100%;
+  right: -90%; }
+  100% {
+  left: 100%;
+  right: -90%; } }
+  @keyframes indeterminate {
+  0% {
+  left: -35%;
+  right: 100%; }
+  60% {
+  left: 100%;
+  right: -90%; }
+  100% {
+  left: 100%;
+  right: -90%; } }
+  @-webkit-keyframes indeterminate-short {
+  0% {
+  left: -200%;
+  right: 100%; }
+  60% {
+  left: 107%;
+  right: -8%; }
+  100% {
+  left: 107%;
+  right: -8%; } }
+  @keyframes indeterminate-short {
+  0% {
+  left: -200%;
+  right: 100%; }
+  60% {
+  left: 107%;
+  right: -8%; }
+  100% {
+  left: 107%;
+  right: -8%; } }
+</style>
 </head>
 <body>
+    <div class="progress" id="PreLoaderBar">
+<div class="indeterminate"></div>
+</div>
    
 <!-- header section starts  -->
 
@@ -47,7 +133,7 @@
     <div class="content">
         <span class="hello">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</span>
         <h3>Perkenalkan Nama Saya <span>MUH. SYAHDAN</span> </h3>
-        <p>Saya lahir di Dawi-dawi pada tanggal 13 bulan Agustus tahun 1997, saya alumni Sistem Informasi (S.Kom) di sebuah Universitas Negeri Semblilan belas November di Kabupaten Kolaka, awal masuk tahun 2015 selesai pada bulan pertengahan di tahun 2020. <br style="text-align: justify-all";> Kelebihan dan kekurangan diri saya yaitu: <br style="text-align: justify-all";> - Saya sangat berkomitmen tinggi terhadap sebuah pekerjaan, serta memiliki semangat dan antusiasme tinggi. <br> - dan saya kurang menguasai bahasa asing, serta pengalaman kerja yang masih minim.</p>
+        <p>Saya lahir di Dawi-dawi pada tanggal 13 bulan Agustus tahun 1997, saya alumni Sistem Informasi (S.Kom) di sebuah Universitas Negeri Semblilan belas November di Kabupaten Kolaka, awal masuk tahun 2015 selesai pada bulan pertengahan di tahun 2020. <br style="text-align: justify-all;>Kelebihan dan kekurangan diri saya yaitu: <br style="text-align: justify-all;> - Saya sangat berkomitmen tinggi terhadap sebuah pekerjaan, serta memiliki semangat dan antusiasme tinggi. <br> - dan saya kurang menguasai bahasa asing, serta pengalaman kerja yang masih minim.</p>
 
         <a href="#about" class="btn">Tentang Saya !</a>
     </div>
@@ -65,17 +151,8 @@
         <div class="box">
             <h3 class="title">MICROSOFT OFFICE</h3>
             <div class="progress">
-                <h3> Microsoft Word <span>95%</span> </h3>
-                <div class="bar"><span></span></div>
-            </div>
-            <div class="progress">
-                <h3> Microsoft Powerpoint <span>90%</span> </h3>
-                <div class="bar"><span></span></div>
-            </div>
-            <div class="progress">
-                <h3> Microsoft Excel <span>85%</span> </h3>
-                <div class="bar"><span></span></div>
-            </div>
+    <div class="progress-bar <strong>progress-bar-animated</strong> progress-bar-striped bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+</div>
         </div>
         <div class="box">
             <h3 class="title">PENDIDIKAN</h3>
@@ -95,7 +172,7 @@
 
     </div>
     <div class="download">
-        <a href="https://drive.google.com/file/d/1DPm5tCppwDv0YbWyLpZpehMkZI6hELKI/view?usp=sharing" target="_BLANK" class="btn"> download CV </a>
+        <a href="https://drive.google.com/file/d/1kvLQsDl6tAOsJfxL3Yq3IUsb6tADG2IJ/view?usp=sharing" target="_BLANK" class="btn"> download CV </a>
     </div>
 
 </section>
@@ -136,9 +213,9 @@
               <input type="text" placeholder="nama" required="" name="nama">
                 <input type="email" placeholder="email" required="" name="email">
             </div>
-            <input type="text" placeholder="subject" required="" name="subject">
-            <textarea id="" cols="30" rows="10" placeholder="Pesan" required="" name="pesan"></textarea>
-            <button class="btn btn-primary btn-kirim" value="submit" type="submit" name="submit" required=""> KIRIM </button>
+            <input type="text" placeholder="subject" name="subject">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Pesan" required="" name="pesan"></textarea>
+             <button class="btn btn-primary btn-kirim" value="submit" type="submit" name="submit" required=""> KIRIM </button>
             <button class="btn btn-primary btn-load d-none" type="button" disabled>
             <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                 Loading...
@@ -157,53 +234,32 @@
 <!-- footer section  -->
 
 <div class="footer">created by <span> muh. syahdan </span> &copy; 2021</div>
-
-
-
 <!-- jquery cdn link  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzIsE7OlSKM2O2FVRnBK3n2HL3yzZFQgKo587W7u7_dtQOnvBZnqQ8qEut0XMvLsFxFkQ/exec"
-  
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx_DLxmJGpDKNj_TXUyuXnOehnVJnaRoiCPse11hifuINbbMul7wkv4aHdFEkOpcNyo/exec'
   const form = document.forms['cv-contact-form']
-  const btnKirim = document.querySelector('.btn-kirim');
-  const btnLoad = document.querySelector('.btn-load');
 
   form.addEventListener('submit', e => {
     e.preventDefault()
-      btnLoad.classList.toggle('d-none');
-      btnKirim.classList.toggle('d-none');
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => 
-      {
-         swal({
-  title: "Apakah anda yakin ?",
-  text: "tekan ok !, jika tidak tekan cancel !",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-})
-.then((willDelete) => {
-  if (willDelete) {
-    swal(
-        "Pesan anda telah terkirim !, terima kasih", {
-      icon: "success",
-    });
-  } else {
-    swal("Pesan anda telah dibatalkan !");
-  }
-});
-        form.reset();
-       btnLoad.classList.toggle('d-none');
-       btnKirim.classList.toggle('d-none');
-        console.log('Success!', response);
-    })
+      .then(response => console.log('Success!', response))
       .catch(error => console.error('Error!', error.message))
   })
 </script>
+
+
+<script type="text/javascript" src=jquery.sj></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.loader').delay('2000').fadeOut();
+    })
+</script>
+
+
+
 </body>
 </html>
